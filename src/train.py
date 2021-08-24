@@ -10,6 +10,7 @@ from pytorch_lightning import (
     seed_everything,
 )
 from pytorch_lightning.loggers import WandbLogger
+import wandb
 
 from src.utils import utils
 
@@ -51,7 +52,6 @@ def train(config: DictConfig) -> Optional[float]:
     log.info(f"Instantiating logger <{config.logger._target_}>")
     logger: WandbLogger = hydra.utils.instantiate(config.logger)
 
-
     # Init lightning trainer
     log.info(f"Instantiating trainer <{config.trainer._target_}>")
     trainer: Trainer = hydra.utils.instantiate(
@@ -80,14 +80,7 @@ def train(config: DictConfig) -> Optional[float]:
 
     # Make sure everything closed properly
     log.info("Finalizing!")
-    utils.finish(
-        config=config,
-        model=model,
-        datamodule=datamodule,
-        trainer=trainer,
-        callbacks=callbacks,
-        logger=logger,
-    )
+    wandb.finish()
 
     # Print path to best checkpoint
     log.info(f"Best checkpoint path:\n{trainer.checkpoint_callback.best_model_path}")
