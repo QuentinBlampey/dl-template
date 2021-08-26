@@ -7,6 +7,17 @@ Good practice deep learning project starter, strongly inspired from <a href="htt
 - Hydra (configuration tool)
 - Weight and biases (experiment logging framework)
 - Poetry (package manager)
+- Sphinx (documentation)
+
+### Project name update
+
+Choose carefully your project name, then rename every `project_src` variable in every file, but also rename every file or folder containing this string.
+
+### Other tools
+
+- `.env.example` can be used to store private variables
+- `.gitlab-ci.yml` deploy the documentation on gitlab pages
+- use the folder `./tests` to run tests with pytest 
 
 ## Quickstart
 

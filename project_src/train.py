@@ -12,7 +12,7 @@ from pytorch_lightning import (
 from pytorch_lightning.loggers import WandbLogger
 import wandb
 
-from project_src.utils import utils
+from .utils import utils
 
 log = utils.get_logger(__name__)
 
