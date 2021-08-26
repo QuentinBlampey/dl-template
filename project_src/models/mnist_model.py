@@ -4,7 +4,7 @@ import torch
 from pytorch_lightning import LightningModule
 from torchmetrics.classification.accuracy import Accuracy
 
-from src.models.modules.simple_dense_net import SimpleDenseNet
+from project_src.models.modules.simple_dense_net import SimpleDenseNet
 
 
 class MNISTLitModel(LightningModule):
@@ -110,5 +110,7 @@ class MNISTLitModel(LightningModule):
             https://pytorch-lightning.readthedocs.io/en/latest/common/lightning_module.html#configure-optimizers
         """
         return torch.optim.Adam(
-            params=self.parameters(), lr=self.hparams.lr, weight_decay=self.hparams.weight_decay
+            params=self.parameters(),
+            lr=self.hparams.lr,
+            weight_decay=self.hparams.weight_decay,
         )
