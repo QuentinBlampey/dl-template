@@ -6,10 +6,6 @@ watch_model:
   log: "all"
   log_freq: 100
 
-upload_code_as_artifact:
-  _target_: project_src.callbacks.wandb_callbacks.UploadCodeAsArtifact
-  code_dir: ${work_dir}/project_src
-
 upload_ckpts_as_artifact:
   _target_: project_src.callbacks.wandb_callbacks.UploadCheckpointsAsArtifact
   ckpt_dir: "checkpoints/"
