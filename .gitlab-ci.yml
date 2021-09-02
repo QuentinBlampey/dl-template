@@ -1,0 +1,17 @@
+image: python:3.8-buster
+
+pages:
+  stage: test
+  before_script:
+  - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+  - export PATH="$PATH:$HOME/.poetry/bin/" 
+  - source $HOME/.poetry/env 
+  - poetry install
+  - source `poetry env info --path`/bin/activate
+  script:
+  - sphinx-build -b html docs/source public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

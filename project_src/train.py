@@ -12,7 +12,7 @@ from pytorch_lightning import (
 from pytorch_lightning.loggers import WandbLogger
 import wandb
 
-from src.utils import utils
+from .utils import utils
 
 log = utils.get_logger(__name__)
 
@@ -51,7 +51,6 @@ def train(config: DictConfig) -> Optional[float]:
     # Init lightning loggers
     log.info(f"Instantiating logger <{config.logger._target_}>")
     logger: WandbLogger = hydra.utils.instantiate(config.logger)
-
 
     # Init lightning trainer
     log.info(f"Instantiating trainer <{config.trainer._target_}>")
