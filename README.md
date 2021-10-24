@@ -1,7 +1,9 @@
 # DL-template
 
 ## Description
+
 Good practice deep learning project starter, strongly inspired from <a href="https://github.com/ashleve/lightning-hydra-template"><img alt="Template" src="https://img.shields.io/badge/-Lightning--Hydra--Template-017F2F?style=flat&logo=github&labelColor=gray"></a>. It uses the following libraries:
+
 - Pytorch (deep learning framework)
 - Pytorch Lightning (Pytorch wrapper for flexible and scalable trainings)
 - Hydra (configuration tool)
@@ -17,23 +19,23 @@ Choose carefully your project name, then rename every `project_src` variable in 
 
 - `.env.example` can be used to store private variables
 - `.gitlab-ci.yml` deploy the documentation on gitlab pages
-- use the folder `./tests` to run tests with pytest 
+- use the folder `./tests` to run tests with pytest
 
 ## Quickstart
 
 ### Requirements
 
-- `conda=^4.10.3`
+- `python=^3.7,<3.11`
 - `poetry=^1.1.6`. You can install it as written in [their doc](https://python-poetry.org/docs/).
 
 ### Environment and dependencies
+
 ```bash
-conda create --name <package-name> python=3.8
-conda activate <package-name>
 poetry install
 ```
 
 Training a model
+
 ```bash
 # default
 poetry run python run.py
